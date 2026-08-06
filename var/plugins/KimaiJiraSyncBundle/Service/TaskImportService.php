@@ -74,42 +74,51 @@ final class TaskImportService
 
         $count = 0;
         foreach ($issues as $issue) {
-            $issueKey = (string) ($issue['key'] ?? '');
-            $summary = (string) ($issue['fields']['summary'] ?? $issueKey);
-
-            if ($issueKey === '') {
-                continue;
+            if ($this->upsertActivity($project, $issue) !== null) {
+                $count++;
             }
-
-            $this->upsertActivity($project, $issueKey, $summary);
-            $count++;
         }
 
         $this->entityManager->flush();
         return $count;
     }
 
-    private function upsertActivity(Project $project, string $issueKey, string $summary): void
+    /**
+     * @param array<string, mixed> $issue raw Jira issue, shaped like search/jql results
+     */
+    private function upsertActivity(Project $project, array $issue): ?Activity
     {
-        $summary = $this->normalizeActivityName($summary);
-
-        $existing = $this->findActivityByIssueKey($project, $issueKey);
-
-        if ($existing !== null) {
-            $existing->setName($summary);
-            $existing->setComment($issueKey);
-            $this->setIssueKeyMeta($existing, $issueKey);
-            return;
+        $issueKey = (string) ($issue['key'] ?? '');
+        if ($issueKey === '') {
+            return null;
         }
 
-        $activity = new Activity();
-        $activity->setName($summary);
-        $activity->setComment($issueKey);
-        $activity->setProject($project);
-        $activity->setVisible(true);
-        $this->setIssueKeyMeta($activity, $issueKey);
+        $summary = (string) ($issue['fields']['summary'] ?? $issueKey);
+        $status = $issue['fields']['status']['name'] ?? null;
+        $assignee = $issue['fields']['assignee']['displayName'] ?? null;
 
-        $this->entityManager->persist($activity);
+        $activity = $this->findActivityByIssueKey($project, $issueKey);
+        $isNew = $activity === null;
+
+        if ($isNew) {
+            $activity = new Activity();
+            $activity->setProject($project);
+            $activity->setVisible(true);
+        }
+
+        // the issue key is baked into the name (not just comment/meta) so it's matchable
+        // everywhere Kimai searches activities by name, e.g. the timesheet activity picker
+        $activity->setName($this->normalizeActivityName($issueKey . ': ' . $summary));
+        $activity->setComment($issueKey);
+        $this->setMeta($activity, 'jira_issue_key', $issueKey);
+        $this->setMeta($activity, 'jira_status', \is_string($status) ? $status : null);
+        $this->setMeta($activity, 'jira_assignee', \is_string($assignee) ? $assignee : null);
+
+        if ($isNew) {
+            $this->entityManager->persist($activity);
+        }
+
+        return $activity;
     }
 
     private function findActivityByIssueKey(Project $project, string $issueKey): ?Activity
@@ -128,17 +137,17 @@ final class TaskImportService
             ->getOneOrNullResult();
     }
 
-    private function setIssueKeyMeta(Activity $activity, string $issueKey): void
+    private function setMeta(Activity $activity, string $name, ?string $value): void
     {
-        $meta = $activity->getMetaField('jira_issue_key');
+        $meta = $activity->getMetaField($name);
         if ($meta !== null) {
-            $meta->setValue($issueKey);
+            $meta->setValue($value);
             return;
         }
 
         $meta = new ActivityMeta();
-        $meta->setName('jira_issue_key');
-        $meta->setValue($issueKey);
+        $meta->setName($name);
+        $meta->setValue($value);
         $activity->setMetaField($meta);
     }
 

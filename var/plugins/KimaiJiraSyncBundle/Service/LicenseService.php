@@ -112,12 +112,13 @@ final class LicenseService implements FreemiumGuardInterface
 
     public function isLicenseActive(): bool
     {
-        // Local override: treat license as active to remove free-tier limits.
+        // The free-tier project limit has been removed; license activation is kept
+        // for support/tracking purposes only and no longer gates functionality.
         return true;
     }
 
     /**
-     * Returns the project ID that is included in the free tier,
+     * Returns the project ID that was included in the (now retired) free tier,
      * or null if no project has been configured yet.
      */
     public function getFreeProjectId(): ?int
@@ -128,8 +129,7 @@ final class LicenseService implements FreemiumGuardInterface
     /**
      * Returns true if the given project is allowed to use Jira sync.
      *
-     * With an active license all projects are allowed.
-     * Without a license only the first (lowest-ID) configured project is allowed for free.
+     * All projects are allowed regardless of license status.
      */
     public function isProjectAllowed(int $projectId): bool
     {

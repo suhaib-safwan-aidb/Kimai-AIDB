@@ -90,11 +90,13 @@ When importing with the `sync-tasks` command, Kimai activity fields are populate
 
 |Kimai activity field|Value from Jira|
 |---|---|
-|`name`|Summary (task description in Jira)|
+|`name`|`{Issue Key}: {Summary}` (e.g. `PROJ-123: Fix login bug`) — the key is baked into the name so the ticket is findable by key or partial key (e.g. `123`) anywhere Kimai searches activities by name, including the timesheet activity picker|
 |`comment`|Issue key (e.g. `PROJ-123`)|
 |meta `jira_issue_key`|Issue key (used for matching on subsequent imports)|
+|meta `jira_status`|Current Jira status (e.g. `In Progress`)|
+|meta `jira_assignee`|Current Jira assignee display name|
 
-Matching existing activities on subsequent imports always uses the meta field `jira_issue_key` — the activity name can be freely renamed in Kimai without losing the link to the Jira issue.
+Matching existing activities on subsequent imports always uses the meta field `jira_issue_key`, so the activity name can still be freely renamed in Kimai without losing the link to the Jira issue — renaming it away from the `{Key}: {Summary}` format just means the activity is no longer searchable by that key until the next import restores it.
 
 ### Import Jira Tasks
 

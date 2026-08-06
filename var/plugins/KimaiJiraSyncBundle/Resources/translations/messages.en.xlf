@@ -179,6 +179,12 @@
             <trans-unit id="jira_sync.sync.no_projects" resname="jira_sync.sync.no_projects">
                 <source>No projects available to sync.</source>
             </trans-unit>
+            <trans-unit id="jira_sync.activity.jira_status" resname="jira_sync.activity.jira_status">
+                <source>Jira Status</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.activity.jira_assignee" resname="jira_sync.activity.jira_assignee">
+                <source>Jira Assignee</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

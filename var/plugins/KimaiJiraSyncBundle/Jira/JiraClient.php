@@ -98,7 +98,7 @@ final class JiraClient implements JiraClientInterface
             $payload = [
                 'jql'        => $jql,
                 'maxResults' => $maxResults,
-                'fields'     => ['summary', 'status', 'issuetype'],
+                'fields'     => ['summary', 'status', 'issuetype', 'assignee'],
             ];
 
             if ($nextPageToken !== null) {
@@ -149,6 +149,41 @@ final class JiraClient implements JiraClientInterface
         }
 
         return $body;
+    }
+
+    /** @return array<int, array{key: string, name: string}> */
+    public function searchProjects(string $query, int $maxResults = 20): array
+    {
+        try {
+            /** @var array{values: array<int, array<string, mixed>>} $body */
+            $body = $this->http->request('GET', 'project/search', [
+                'query' => [
+                    'query'      => $query,
+                    'maxResults' => $maxResults,
+                ],
+            ])->toArray();
+        } catch (TransportExceptionInterface $e) {
+            throw new JiraClientException(
+                "Project search failed for query \"{$query}\": {$e->getMessage()}",
+                previous: $e,
+            );
+        } catch (\Throwable $e) {
+            throw new JiraClientException(
+                "Project search failed for query \"{$query}\": {$e->getMessage()}",
+                previous: $e,
+            );
+        }
+
+        $projects = [];
+        foreach ($body['values'] ?? [] as $project) {
+            if (!isset($project['key'], $project['name'])) {
+                continue;
+            }
+
+            $projects[] = ['key' => (string) $project['key'], 'name' => (string) $project['name']];
+        }
+
+        return $projects;
     }
 
     /** @return array<string, mixed> */

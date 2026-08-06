@@ -42,4 +42,12 @@ interface JiraClientInterface
      * @throws JiraClientException
      */
     public function getWorklog(string $issueKey, string $worklogId): array;
+
+    /**
+     * Search Jira projects by key or name.
+     *
+     * @return array<int, array{key: string, name: string}>
+     * @throws JiraClientException
+     */
+    public function searchProjects(string $query, int $maxResults = 20): array;
 }
