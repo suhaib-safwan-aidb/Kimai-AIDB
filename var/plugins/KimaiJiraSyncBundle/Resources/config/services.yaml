@@ -1,0 +1,32 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    KimaiPlugin\KimaiJiraSyncBundle\:
+        resource: '../../*'
+        exclude:
+            - '../../Migrations/'
+            - '../../Resources/'
+            - '../../tests/'
+            - '../../vendor/'
+
+    KimaiPlugin\KimaiJiraSyncBundle\Controller\:
+        resource: '../../Controller'
+        tags: ['controller.service_arguments']
+
+    KimaiPlugin\KimaiJiraSyncBundle\Service\EncryptionService:
+        arguments:
+            $appSecret: '%env(APP_SECRET)%'
+
+    KimaiPlugin\KimaiJiraSyncBundle\Service\LicenseClient:
+        arguments:
+            $licenseServerUrl: 'https://licenses.rebma.cz'
+            $apiKey: 'a02c1af7e6121b019f267a0ad9e9826af10045f657143e2eca84866376a63f58'
+
+    KimaiPlugin\KimaiJiraSyncBundle\Service\LicenseClientInterface: '@KimaiPlugin\KimaiJiraSyncBundle\Service\LicenseClient'
+
+    KimaiPlugin\KimaiJiraSyncBundle\Repository\LicenseActivationRepositoryInterface: '@KimaiPlugin\KimaiJiraSyncBundle\Repository\LicenseActivationRepository'
+
+    KimaiPlugin\KimaiJiraSyncBundle\Service\LicenseService: ~

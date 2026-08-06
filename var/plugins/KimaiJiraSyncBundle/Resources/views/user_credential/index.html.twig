@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}{{ 'jira_sync.my_credentials.title'|trans }}{% endblock %}
+
+{% block main %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">{{ 'jira_sync.my_credentials.title'|trans }}</h3>
+            <div class="card-actions">
+                {% if credentials is not empty %}
+                    <form method="post" action="{{ path('jira_sync_my_credentials_sync_all') }}" style="display: inline;">
+                        <input type="hidden" name="_token" value="{{ csrf_token('sync-all-my-credentials') }}">
+                        <button type="submit" class="btn btn-info btn-sm">
+                            <i class="fas fa-sync me-1"></i>{{ 'jira_sync.action.sync_all'|trans }}
+                        </button>
+                    </form>
+                {% endif %}
+                {% if can_add_more %}
+                    <a href="{{ path('jira_sync_my_credentials_new') }}" class="btn btn-success btn-sm">
+                        <i class="fas fa-plus me-1"></i>{{ 'jira_sync.credentials.add'|trans }}
+                    </a>
+                {% else %}
+                    <span class="badge bg-warning text-dark">
+                        <i class="fas fa-lock me-1"></i>{{ 'jira_sync.freemium.license_required'|trans }}
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="card-body p-0">
+            {% if not can_add_more %}
+                <div class="px-3 pt-3">
+                    <div class="alert alert-warning">
+                        <i class="fas fa-lock me-2"></i>{{ 'jira_sync.freemium.no_more_credentials'|trans }}
+                    </div>
+                </div>
+            {% endif %}
+            {% if credentials is empty %}
+                <div class="p-3 text-muted">{{ 'jira_sync.credentials.empty'|trans }}</div>
+            {% else %}
+                <table class="table table-hover dataTable">
+                    <thead>
+                        <tr>
+                            <th>{{ 'jira_sync.credentials.project_id'|trans }}</th>
+                            <th class="actions"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for credential in credentials %}
+                            <tr class="row-clickable" data-href="{{ path('jira_sync_my_credentials_edit', {id: credential.id}) }}">
+                                <td>{{ projectNames[credential.projectId] ?? credential.projectId }}</td>
+                                <td class="actions">
+                                    <div class="dropdown">
+                                        <a href="#" class="link-secondary btn-sm" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="{{ 'jira_sync.action.actions'|trans }}">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a class="dropdown-item" href="{{ path('jira_sync_my_credentials_edit', {id: credential.id}) }}">
+                                                {{ 'jira_sync.action.edit'|trans }}
+                                            </a>
+                                            {% if syncTasksEnabled[credential.projectId] is defined and syncTasksEnabled[credential.projectId] %}
+                                            <form method="post" action="{{ path('jira_sync_my_credentials_sync', {id: credential.id}) }}">
+                                                <input type="hidden" name="_token" value="{{ csrf_token('sync-my-credential-' ~ credential.id) }}">
+                                                <button type="submit" class="dropdown-item">
+                                                    {{ 'jira_sync.action.sync'|trans }}
+                                                </button>
+                                            </form>
+                                            {% endif %}
+                                            <form method="post" action="{{ path('jira_sync_my_credentials_delete', {id: credential.id}) }}" onsubmit="return confirm('{{ 'jira_sync.credentials.delete_confirm'|trans }}');">
+                                                <input type="hidden" name="_token" value="{{ csrf_token('delete-my-credential-' ~ credential.id) }}">
+                                                <button type="submit" class="dropdown-item text-danger">
+                                                    {{ 'jira_sync.action.delete'|trans }}
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.querySelectorAll('tr.row-clickable').forEach(function (row) {
+            row.style.cursor = 'pointer';
+            row.addEventListener('click', function (e) {
+                if (!e.target.closest('.actions')) {
+                    window.location = row.dataset.href;
+                }
+            });
+        });
+    </script>
+{% endblock %}

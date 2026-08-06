@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}{{ title|trans }}{% endblock %}
+
+{% block main %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">{{ title|trans }}</h3>
+        </div>
+        <div class="card-body">
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+            <div class="row">
+                <div class="col-md-6">
+                    {% if form.projectId is defined and not form.projectId.vars.disabled %}
+                        {{ form_row(form.projectId) }}
+                    {% elseif form.projectId is defined %}
+                        {# Project is fixed on edit – show disabled field #}
+                        {{ form_row(form.projectId) }}
+                    {% endif %}
+                    {{ form_row(form.jiraUsername) }}
+                    {{ form_row(form.jiraApiToken) }}
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save me-1"></i>{{ 'action.save'|trans }}
+                </button>
+                <a href="{{ path('jira_sync_my_credentials') }}" class="btn btn-default">
+                    <i class="fas fa-arrow-left me-1"></i>{{ 'action.back'|trans }}
+                </a>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

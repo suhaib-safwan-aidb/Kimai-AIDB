@@ -127,6 +127,7 @@ FROM php:8.3-fpm-alpine AS fpm-base
 ARG TIMEZONE
 RUN apk add --no-cache \
         bash \
+    ca-certificates \
         coreutils \
         freetype \
         haveged \
@@ -160,6 +161,7 @@ ARG TIMEZONE
 RUN apt-get update && \
     apt-get install -y \
         bash \
+        ca-certificates \
         haveged \
         libicu72 \
         libldap-common \
@@ -168,6 +170,7 @@ RUN apt-get update && \
         libxslt1.1 \
         libfreetype6 \
         unzip && \
+    update-ca-certificates && \
     echo "Listen 8001" > /etc/apache2/ports.conf && \
     a2enmod rewrite && \
     touch /use_apache

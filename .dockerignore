@@ -34,6 +34,9 @@ var/packages/*
 var/plugins/*
 var/templates/*
 !var/**/.gitkeep
+# Include the actual plugin bundle in the Docker image
+!var/plugins/KimaiJiraSyncBundle/
+!var/plugins/KimaiJiraSyncBundle/**
 
 # IDE, tools, caches
 .idea/

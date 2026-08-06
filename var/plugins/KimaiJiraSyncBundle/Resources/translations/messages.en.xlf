@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="jira_sync.project.jira_project_key" resname="jira_sync.project.jira_project_key">
+                <source>Jira Project Key</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.title" resname="jira_sync.credentials.title">
+                <source>Jira Credentials</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.add" resname="jira_sync.credentials.add">
+                <source>Add Credentials</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.empty" resname="jira_sync.credentials.empty">
+                <source>No Jira credentials configured yet.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.user_id" resname="jira_sync.credentials.user_id">
+                <source>User</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.project_id" resname="jira_sync.credentials.project_id">
+                <source>Project</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.jira_username" resname="jira_sync.credentials.jira_username">
+                <source>Jira Username</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.delete_confirm" resname="jira_sync.credentials.delete_confirm">
+                <source>Are you sure you want to delete these credentials?</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.my_credentials.title" resname="jira_sync.my_credentials.title">
+                <source>My Jira Credentials</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.my_credentials.menu" resname="jira_sync.my_credentials.menu">
+                <source>My Jira Credentials</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.menu.label" resname="jira_sync.menu.label">
+                <source>Jira Sync</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.api_token" resname="jira_sync.credentials.api_token">
+                <source>Jira API Token</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.saved" resname="jira_sync.credentials.saved">
+                <source>Jira credentials saved successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.deleted" resname="jira_sync.credentials.deleted">
+                <source>Jira credentials deleted successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.edit" resname="jira_sync.credentials.edit">
+                <source>Edit Jira Credentials</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.menu.credentials" resname="jira_sync.menu.credentials">
+                <source>Credentials</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.sync.button" resname="jira_sync.sync.button">
+                <source>Sync Activities from Jira</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.sync.success" resname="jira_sync.sync.success">
+                <source>Activity synchronization from Jira completed successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.sync.invalid_token" resname="jira_sync.sync.invalid_token">
+                <source>Invalid CSRF token.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.action.actions" resname="jira_sync.action.actions">
+                <source>Actions</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.action.edit" resname="jira_sync.action.edit">
+                <source>Edit</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.action.sync" resname="jira_sync.action.sync">
+                <source>Sync Activities</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.action.delete" resname="jira_sync.action.delete">
+                <source>Delete</source>
+            </trans-unit>
+            <trans-unit id="action.back" resname="action.back">
+                <source>Back</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.activity.jira_issue_key" resname="jira_sync.activity.jira_issue_key">
+                <source>Jira Issue Key</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.project.jira_instance_url" resname="jira_sync.project.jira_instance_url">
+                <source>Jira Instance URL</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.project.time_multiplier" resname="jira_sync.project.time_multiplier">
+                <source>Time Multiplier</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.project.sync_tasks_enabled" resname="jira_sync.project.sync_tasks_enabled">
+                <source>Sync Tasks Enabled</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.title" resname="jira_sync.license.title">
+                <source>License</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.menu" resname="jira_sync.license.menu">
+                <source>License</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.key" resname="jira_sync.license.key">
+                <source>License Key</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.status.title" resname="jira_sync.license.status.title">
+                <source>Current License Status</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.status.label" resname="jira_sync.license.status.label">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.status.active" resname="jira_sync.license.status.active">
+                <source>Active</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.status.expired" resname="jira_sync.license.status.expired">
+                <source>Expired</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.status.invalid" resname="jira_sync.license.status.invalid">
+                <source>Invalid</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.expires_at" resname="jira_sync.license.expires_at">
+                <source>Expires At</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activated_at" resname="jira_sync.license.activated_at">
+                <source>Activated At</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.last_verified_at" resname="jira_sync.license.last_verified_at">
+                <source>Last Verified At</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.not_activated" resname="jira_sync.license.not_activated">
+                <source>No license has been activated yet.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.verify_now" resname="jira_sync.license.verify_now">
+                <source>Verify Now</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.deactivate.button" resname="jira_sync.license.deactivate.button">
+                <source>Deactivate</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activate.title" resname="jira_sync.license.activate.title">
+                <source>Activate License</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activate.button" resname="jira_sync.license.activate.button">
+                <source>Activate</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activated" resname="jira_sync.license.activated">
+                <source>License activated successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activation_failed" resname="jira_sync.license.activation_failed">
+                <source>License activation failed. Please check your license key.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.verified" resname="jira_sync.license.verified">
+                <source>License verified successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.verification_failed" resname="jira_sync.license.verification_failed">
+                <source>License verification failed. Please check your connectivity or re-activate the license.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.deactivated" resname="jira_sync.license.deactivated">
+                <source>License deactivated successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.deactivation_failed" resname="jira_sync.license.deactivation_failed">
+                <source>License deactivation failed. Please check your connectivity.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.info" resname="jira_sync.freemium.info">
+                <source>Free plan: one project is included at no cost. Activate a license to unlock all projects.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.free_project_label" resname="jira_sync.freemium.free_project_label">
+                <source>Free Project (ID)</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.no_free_project" resname="jira_sync.freemium.no_free_project">
+                <source>No project configured yet. The first project you set up will be free.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.license_required" resname="jira_sync.freemium.license_required">
+                <source>License required</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.project_not_allowed" resname="jira_sync.freemium.project_not_allowed">
+                <source>This project requires a license. Activate a license to enable Jira sync for additional projects.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.no_more_credentials" resname="jira_sync.freemium.no_more_credentials">
+                <source>Free plan allows one set of credentials. Activate a license to add credentials for more projects.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.action.sync_all" resname="jira_sync.action.sync_all">
+                <source>Sync All Jira Items</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.sync.all_success" resname="jira_sync.sync.all_success">
+                <source>All Jira items synchronized successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.sync.no_projects" resname="jira_sync.sync.no_projects">
+                <source>No projects available to sync.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

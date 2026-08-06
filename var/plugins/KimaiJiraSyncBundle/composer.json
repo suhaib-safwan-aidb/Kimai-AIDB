@@ -1,0 +1,47 @@
+{
+    "name": "rebma/kimai-jira-sync-bundle",
+    "description": "Kimai2 plugin for automatic synchronization of time records to Atlassian Jira",
+    "homepage": "https://github.com/rebma/kimai-jira-sync-bundle",
+    "type": "kimai-plugin",
+    "version": "1.1.5",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.2",
+        "psr/log": "^3.0",
+        "symfony/http-client": "^6.0 || ^7.0"
+    },
+    "require-dev": {
+        "kimai/kimai": "^2.51",
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "KimaiPlugin\\KimaiJiraSyncBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            "tests/Stub/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KimaiPlugin\\KimaiJiraSyncBundle\\Tests\\": "tests/"
+        },
+        "exclude-from-classmap": [
+            "tests/Stub/"
+        ]
+    },
+    "extra": {
+        "kimai": {
+            "require": 20000,
+            "name": "KimaiJiraSync"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        }
+    }
+}

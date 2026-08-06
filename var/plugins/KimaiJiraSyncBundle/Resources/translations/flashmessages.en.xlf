@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="jira_sync.credentials.saved" resname="jira_sync.credentials.saved">
+                <source>Jira credentials saved successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.deleted" resname="jira_sync.credentials.deleted">
+                <source>Jira credentials deleted successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activated" resname="jira_sync.license.activated">
+                <source>License activated successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activation_failed" resname="jira_sync.license.activation_failed">
+                <source>License activation failed. Please check your license key.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.verified" resname="jira_sync.license.verified">
+                <source>License verified successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.verification_failed" resname="jira_sync.license.verification_failed">
+                <source>License verification failed. Please check your connectivity or re-activate the license.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.deactivated" resname="jira_sync.license.deactivated">
+                <source>License deactivated successfully.</source>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.deactivation_failed" resname="jira_sync.license.deactivation_failed">
+                <source>License deactivation failed. Please check your connectivity.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

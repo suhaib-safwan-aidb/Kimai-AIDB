@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="cs" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="jira_sync.project.jira_project_key" resname="jira_sync.project.jira_project_key">
+                <source>Jira Project Key</source>
+                <target>Klíč Jira projektu</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.title" resname="jira_sync.credentials.title">
+                <source>Jira Credentials</source>
+                <target>Jira přihlašovací údaje</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.add" resname="jira_sync.credentials.add">
+                <source>Add Credentials</source>
+                <target>Přidat přihlašovací údaje</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.empty" resname="jira_sync.credentials.empty">
+                <source>No Jira credentials configured yet.</source>
+                <target>Zatím nejsou nakonfigurované žádné Jira přihlašovací údaje.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.user_id" resname="jira_sync.credentials.user_id">
+                <source>User</source>
+                <target>Uživatel</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.project_id" resname="jira_sync.credentials.project_id">
+                <source>Project</source>
+                <target>Projekt</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.jira_username" resname="jira_sync.credentials.jira_username">
+                <source>Jira Username</source>
+                <target>Jira uživatelské jméno</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.delete_confirm" resname="jira_sync.credentials.delete_confirm">
+                <source>Are you sure you want to delete these credentials?</source>
+                <target>Opravdu chcete smazat tyto přihlašovací údaje?</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.my_credentials.title" resname="jira_sync.my_credentials.title">
+                <source>My Jira Credentials</source>
+                <target>Moje Jira přihlašovací údaje</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.my_credentials.menu" resname="jira_sync.my_credentials.menu">
+                <source>My Credentials</source>
+                <target>Moje přihlašovací údaje</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.menu.label" resname="jira_sync.menu.label">
+                <source>Jira Sync</source>
+                <target>Jira Sync</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.api_token" resname="jira_sync.credentials.api_token">
+                <source>Jira API Token</source>
+                <target>Jira API token</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.saved" resname="jira_sync.credentials.saved">
+                <source>Jira credentials saved successfully.</source>
+                <target>Jira přihlašovací údaje byly úspěšně uloženy.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.deleted" resname="jira_sync.credentials.deleted">
+                <source>Jira credentials deleted successfully.</source>
+                <target>Jira přihlašovací údaje byly úspěšně smazány.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.credentials.edit" resname="jira_sync.credentials.edit">
+                <source>Edit Jira Credentials</source>
+                <target>Upravit Jira přihlašovací údaje</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.menu.credentials" resname="jira_sync.menu.credentials">
+                <source>Credentials</source>
+                <target>Přihlašovací údaje</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.sync.button" resname="jira_sync.sync.button">
+                <source>Sync Activities from Jira</source>
+                <target>Synchronizovat aktivity z Jira</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.sync.success" resname="jira_sync.sync.success">
+                <source>Activity synchronization from Jira completed successfully.</source>
+                <target>Synchronizace aktivit z Jira byla úspěšně dokončena.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.sync.invalid_token" resname="jira_sync.sync.invalid_token">
+                <source>Invalid CSRF token.</source>
+                <target>Neplatný CSRF token.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.action.actions" resname="jira_sync.action.actions">
+                <source>Actions</source>
+                <target>Akce</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.action.edit" resname="jira_sync.action.edit">
+                <source>Edit</source>
+                <target>Upravit</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.action.sync" resname="jira_sync.action.sync">
+                <source>Sync Activities</source>
+                <target>Synchronizovat aktivity</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.action.delete" resname="jira_sync.action.delete">
+                <source>Delete</source>
+                <target>Smazat</target>
+            </trans-unit>
+            <trans-unit id="action.back" resname="action.back">
+                <source>Back</source>
+                <target>Zpět</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.activity.jira_issue_key" resname="jira_sync.activity.jira_issue_key">
+                <source>Jira Issue Key</source>
+                <target>Klíč Jira úkolu</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.project.jira_instance_url" resname="jira_sync.project.jira_instance_url">
+                <source>Jira Instance URL</source>
+                <target>URL Jira instance</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.project.time_multiplier" resname="jira_sync.project.time_multiplier">
+                <source>Time Multiplier</source>
+                <target>Násobič času</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.project.sync_tasks_enabled" resname="jira_sync.project.sync_tasks_enabled">
+                <source>Sync Tasks Enabled</source>
+                <target>Synchronizace úkolů povolena</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.title" resname="jira_sync.license.title">
+                <source>License</source>
+                <target>Licence</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.menu" resname="jira_sync.license.menu">
+                <source>License</source>
+                <target>Licence</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.key" resname="jira_sync.license.key">
+                <source>License Key</source>
+                <target>Licenční klíč</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.status.title" resname="jira_sync.license.status.title">
+                <source>Current License Status</source>
+                <target>Aktuální stav licence</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.status.label" resname="jira_sync.license.status.label">
+                <source>Status</source>
+                <target>Stav</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.status.active" resname="jira_sync.license.status.active">
+                <source>Active</source>
+                <target>Aktivní</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.status.expired" resname="jira_sync.license.status.expired">
+                <source>Expired</source>
+                <target>Vypršela</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.status.invalid" resname="jira_sync.license.status.invalid">
+                <source>Invalid</source>
+                <target>Neplatná</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.expires_at" resname="jira_sync.license.expires_at">
+                <source>Expires At</source>
+                <target>Platná do</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activated_at" resname="jira_sync.license.activated_at">
+                <source>Activated At</source>
+                <target>Aktivována dne</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.last_verified_at" resname="jira_sync.license.last_verified_at">
+                <source>Last Verified At</source>
+                <target>Naposledy ověřena</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.not_activated" resname="jira_sync.license.not_activated">
+                <source>No license has been activated yet.</source>
+                <target>Žádná licence dosud nebyla aktivována.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.verify_now" resname="jira_sync.license.verify_now">
+                <source>Verify Now</source>
+                <target>Ověřit nyní</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.deactivate.button" resname="jira_sync.license.deactivate.button">
+                <source>Deactivate</source>
+                <target>Deaktivovat</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activate.title" resname="jira_sync.license.activate.title">
+                <source>Activate License</source>
+                <target>Aktivovat licenci</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activate.button" resname="jira_sync.license.activate.button">
+                <source>Activate</source>
+                <target>Aktivovat</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activated" resname="jira_sync.license.activated">
+                <source>License activated successfully.</source>
+                <target>Licence byla úspěšně aktivována.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.activation_failed" resname="jira_sync.license.activation_failed">
+                <source>License activation failed. Please check your license key.</source>
+                <target>Aktivace licence selhala. Zkontrolujte prosím svůj licenční klíč.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.verified" resname="jira_sync.license.verified">
+                <source>License verified successfully.</source>
+                <target>Licence byla úspěšně ověřena.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.verification_failed" resname="jira_sync.license.verification_failed">
+                <source>License verification failed. Please check your connectivity or re-activate the license.</source>
+                <target>Ověření licence selhalo. Zkontrolujte prosím připojení nebo znovu aktivujte licenci.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.deactivated" resname="jira_sync.license.deactivated">
+                <source>License deactivated successfully.</source>
+                <target>Licence byla úspěšně deaktivována.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.license.deactivation_failed" resname="jira_sync.license.deactivation_failed">
+                <source>License deactivation failed. Please check your connectivity.</source>
+                <target>Deaktivace licence selhala. Zkontrolujte prosím připojení.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.info" resname="jira_sync.freemium.info">
+                <source>Free plan: one project is included at no cost. Activate a license to unlock all projects.</source>
+                <target>Bezplatný plán: jeden projekt je zdarma. Aktivujte licenci pro odemčení všech projektů.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.free_project_label" resname="jira_sync.freemium.free_project_label">
+                <source>Free Project (ID)</source>
+                <target>Bezplatný projekt (ID)</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.no_free_project" resname="jira_sync.freemium.no_free_project">
+                <source>No project configured yet. The first project you set up will be free.</source>
+                <target>Zatím není nakonfigurován žádný projekt. První projekt, který nastavíte, bude zdarma.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.license_required" resname="jira_sync.freemium.license_required">
+                <source>License required</source>
+                <target>Vyžaduje licenci</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.project_not_allowed" resname="jira_sync.freemium.project_not_allowed">
+                <source>This project requires a license. Activate a license to enable Jira sync for additional projects.</source>
+                <target>Tento projekt vyžaduje licenci. Aktivujte licenci pro povolení Jira synchronizace pro další projekty.</target>
+            </trans-unit>
+            <trans-unit id="jira_sync.freemium.no_more_credentials" resname="jira_sync.freemium.no_more_credentials">
+                <source>Free plan allows one set of credentials. Activate a license to add credentials for more projects.</source>
+                <target>Bezplatný plán umožňuje jednu sadu přihlašovacích údajů. Aktivujte licenci pro přidání přihlašovacích údajů pro další projekty.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
