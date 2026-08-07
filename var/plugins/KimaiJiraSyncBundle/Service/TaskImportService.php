@@ -114,9 +114,11 @@ final class TaskImportService
         $this->setMeta($activity, 'jira_status', \is_string($status) ? $status : null);
         $this->setMeta($activity, 'jira_assignee', \is_string($assignee) ? $assignee : null);
 
-        if ($isNew) {
-            $this->entityManager->persist($activity);
-        }
+        // Activity and ActivityMeta both use DEFERRED_EXPLICIT change tracking, so Doctrine
+        // only picks up property changes on an entity if persist() is called on it during
+        // this flush - including already-existing ones, not just newly created ones.
+        // persist() cascades to the meta collection too (cascade: ['persist'] on Activity::$meta).
+        $this->entityManager->persist($activity);
 
         return $activity;
     }
